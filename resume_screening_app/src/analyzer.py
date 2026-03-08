@@ -1,10 +1,12 @@
 from pathlib import Path
 from src.llm_service import get_llm
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+PROMPT_PATH = BASE_DIR / "prompts" / "resume_analysis_prompt.txt"
+
 
 def load_prompt() -> str:
-    prompt_path = Path("prompts/resume_analysis_prompt.txt")
-    return prompt_path.read_text(encoding="utf-8")
+    return PROMPT_PATH.read_text(encoding="utf-8")
 
 
 def analyze_resume(resume_text: str, job_description: str) -> str:
@@ -13,7 +15,7 @@ def analyze_resume(resume_text: str, job_description: str) -> str:
 
     prompt = template.format(
         job_description=job_description,
-        resume_text=resume_text,
+        resume_text=resume_text
     )
 
     response = llm.invoke(prompt)
