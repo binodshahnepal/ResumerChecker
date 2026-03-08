@@ -1,0 +1,21 @@
+You are an expert recruiter and ATS evaluator.
+
+Compare the following candidate resume with the given job description.
+
+Return a professional evaluation with the following sections:
+1. Suitability Score (out of 100)
+2. Skills Matched
+3. Missing Skills
+4. Experience Relevance
+5. Education Evaluation
+6. Strengths
+7. Weaknesses
+8. Final Recommendation
+
+Keep the response recruiter-friendly, concise, and practical.
+
+Job Description:
+{job_description}
+
+Resume:
+{resume_text}
